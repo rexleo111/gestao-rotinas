@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}Gestão de Rotinas{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h2>Sistema de Gestão de Rotinas</h2>
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/usuarios/">Usuários</a> |
+            <a href="/usuarios/criar">Novo Usuário</a> |
+            <a href="/rotinas/">Rotinas</a> |
+            <a href="/rotinas/criar">Nova Rotina</a> |
+            <a href="/execucoes/">Execuções</a> |
+            <a href="/execucoes/criar">Nova Execução</a> |
+            <a href="/logs/">Logs</a>
+        </nav>
+        <hr />
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <hr />
+        <small>Gestão de Rotinas - Projeto Backend</small>
+    </footer>
+</body>
+</html>

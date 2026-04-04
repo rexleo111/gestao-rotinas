@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Logs{% endblock %}
+{% block content %}
+<h1>Logs do Sistema</h1>
+{% if logs %}
+<ul>
+    {% for l in logs %}
+    <li>[{{ l.data_hora }}] <strong>{{ l.acao }}</strong> — {{ l.descricao }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Nenhum log registrado.</p>
+{% endif %}
+{% endblock %}

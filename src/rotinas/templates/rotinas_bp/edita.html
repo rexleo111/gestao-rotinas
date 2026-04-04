@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Editar Rotina{% endblock %}
+{% block content %}
+<h1>Editar Rotina</h1>
+<form method="post">
+    <p>
+        Título:<br>
+        <input type="text" name="titulo" value="{{ rotina.titulo }}" required>
+    </p>
+    <p>
+        Descrição:<br>
+        <textarea name="descricao">{{ rotina.descricao }}</textarea>
+    </p>
+    <button type="submit">Atualizar</button>
+</form>
+{% endblock %}

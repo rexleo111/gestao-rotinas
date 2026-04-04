@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Rotinas{% endblock %}
+{% block content %}
+<h1>Rotinas</h1>
+{% if rotinas %}
+<ul>
+    {% for r in rotinas %}
+    <li>
+        #{{ r.id }} — {{ r.titulo }} 
+        ({{ "Ativa" if r.ativa else "Inativa" }})
+        — Usuário: {{ r.usuario.nome }}
+        | <a href="/rotinas/{{ r.id }}/toggle">Ativar/Desativar</a>
+        | <a href="/rotinas/{{ r.id }}/editar">Editar</a>
+        | <a href="/rotinas/{{ r.id }}/deletar">Deletar</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Nenhuma rotina cadastrada.</p>
+{% endif %}
+{% endblock %}

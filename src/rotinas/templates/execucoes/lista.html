@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Execuções{% endblock %}
+{% block content %}
+<h1>Execuções</h1>
+{% if execucoes %}
+<ul>
+    {% for e in execucoes %}
+    <li>
+        #{{ e.id }} — Rotina: {{ e.rotina.titulo }}
+        — Data: {{ e.data_execucao }}
+        — Obs: {{ e.observacao or "—" }}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Nenhuma execução registrada.</p>
+{% endif %}
+{% endblock %}
