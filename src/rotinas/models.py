@@ -9,7 +9,7 @@ class Usuario(db.Model):
     email = db.Column(db.String(150), unique=True, nullable=False)
     criado_em = db.Column(db.DateTime, default=datetime.utcnow)
 
-    rotinas = db.relationship("Rotina", backref="usuario", lazy=True)
+    rotinas = db.relationship("Rotina", backref="usuario", lazy=True, cascade="all, delete-orphan")
 
 class Rotina(db.Model):
     __tablename__ = "rotinas"
@@ -21,7 +21,7 @@ class Rotina(db.Model):
     usuario_id = db.Column(db.Integer, db.ForeignKey("usuarios.id"), nullable=False)
     criada_em = db.Column(db.DateTime, default=datetime.utcnow)
 
-    execucoes = db.relationship("Execucao", backref="rotina", lazy=True)
+    execucoes = db.relationship("Execucao", backref="rotina", lazy=True, cascade="all, delete-orphan")
 
 class Execucao(db.Model):
     __tablename__ = "execucoes"
